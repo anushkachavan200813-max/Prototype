@@ -1,0 +1,41 @@
+food,moisture_content,fat_content,ph,respiration_category,shelf_life_days,storage_type,storage_temp_c,relative_humidity,material,oxygen_barrier,moisture_barrier,sealability,mechanical_strength,breathability,label
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,LDPE,Low,High,High,Medium,Low,not_candidate_in_demo
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,HDPE,Medium,High,High,High,Low,not_candidate_in_demo
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,PET,High,Medium,Low,High,Low,not_candidate_in_demo
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,Metallized PET Laminate,High,High,High,High,Low,candidate_for_review
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,Aluminum Foil Laminate,High,High,High,High,Low,candidate_for_review
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,Breathable Film,Low,Low,Medium,Medium,High,not_candidate_in_demo
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,Biodegradable Film,Low,Medium,Medium,Low,Medium,not_candidate_in_demo
+Potato Chips,2,35,6.2,NonRespiring,90,Ambient,25,50,Paper-Based Packaging,Low,Low,Low,Low,High,not_candidate_in_demo
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,LDPE,Low,High,High,Medium,Low,candidate_for_review
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,HDPE,Medium,High,High,High,Low,candidate_for_review
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,PET,High,Medium,Low,High,Low,not_candidate_in_demo
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,Metallized PET Laminate,High,High,High,High,Low,candidate_for_review
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,Aluminum Foil Laminate,High,High,High,High,Low,candidate_for_review
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,Breathable Film,Low,Low,Medium,Medium,High,not_candidate_in_demo
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,Biodegradable Film,Low,Medium,Medium,Low,Medium,not_candidate_in_demo
+Biscuits,5,18,6.5,NonRespiring,60,Ambient,25,50,Paper-Based Packaging,Low,Low,Low,Low,High,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,LDPE,Low,High,High,Medium,Low,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,HDPE,Medium,High,High,High,Low,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,PET,High,Medium,Low,High,Low,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,Metallized PET Laminate,High,High,High,High,Low,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,Aluminum Foil Laminate,High,High,High,High,Low,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,Breathable Film,Low,Low,Medium,Medium,High,candidate_for_review
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,Biodegradable Film,Low,Medium,Medium,Low,Medium,not_candidate_in_demo
+Mango,82,0.5,3.8,Respiring,7,Refrigerated,8,85,Paper-Based Packaging,Low,Low,Low,Low,High,candidate_for_review
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,LDPE,Low,High,High,Medium,Low,not_candidate_in_demo
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,HDPE,Medium,High,High,High,Low,not_candidate_in_demo
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,PET,High,Medium,Low,High,Low,not_candidate_in_demo
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,Metallized PET Laminate,High,High,High,High,Low,candidate_for_review
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,Aluminum Foil Laminate,High,High,High,High,Low,candidate_for_review
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,Breathable Film,Low,Low,Medium,Medium,High,not_candidate_in_demo
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,Biodegradable Film,Low,Medium,Medium,Low,Medium,not_candidate_in_demo
+Milk Powder,4,1,6.7,NonRespiring,180,Ambient,25,40,Paper-Based Packaging,Low,Low,Low,Low,High,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,LDPE,Low,High,High,Medium,Low,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,HDPE,Medium,High,High,High,Low,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,PET,High,Medium,Low,High,Low,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,Metallized PET Laminate,High,High,High,High,Low,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,Aluminum Foil Laminate,High,High,High,High,Low,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,Breathable Film,Low,Low,Medium,Medium,High,candidate_for_review
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,Biodegradable Film,Low,Medium,Medium,Low,Medium,not_candidate_in_demo
+Fresh Spinach,91,0.4,6.3,Respiring,5,Refrigerated,5,90,Paper-Based Packaging,Low,Low,Low,Low,High,candidate_for_review

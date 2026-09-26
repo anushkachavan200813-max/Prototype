@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Materials | SmartPack AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f8f5;
+            color: #1f2937;
+            font-family: "Poppins", sans-serif;
+        }
+
+        header {
+            padding: 18px 7%;
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .brand {
+            color: #16794b;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .brand span {
+            color: #1f2937;
+        }
+
+        main {
+            width: min(1100px, 94%);
+            margin: 38px auto;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(25px, 4vw, 34px);
+        }
+
+        h2 {
+            margin: 34px 0 8px;
+            font-size: clamp(19px, 3vw, 24px);
+        }
+
+        .subtitle {
+            margin: 0 0 22px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .notice {
+            margin-bottom: 20px;
+            padding: 13px 15px;
+            border: 1px solid #f3d28b;
+            border-radius: 10px;
+            background: #fff8e8;
+            color: #795817;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .data-notice {
+            margin: 15px 0 20px;
+            padding: 13px 15px;
+            border: 1px solid #b7dfc5;
+            border-radius: 10px;
+            background: #effaf2;
+            color: #24623d;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        table {
+            width: 100%;
+            min-width: 850px;
+            border-collapse: collapse;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 13px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        th {
+            background: #eaf5ee;
+            color: #176b46;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .source {
+            margin: 12px 0 0;
+            color: #6b7280;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .actions {
+            margin-top: 25px;
+        }
+
+        a.back {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 9px;
+            background: #1f2937;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        a.back:hover {
+            background: #374151;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            main {
+                margin: 28px auto;
+            }
+
+            .subtitle {
+                font-size: 13px;
+            }
+
+            th,
+            td {
+                padding: 11px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">SmartPack <span>AI</span></div>
+    </header>
+
+    <main>
+        <h1>Packaging material comparison</h1>
+
+        <p class="subtitle">
+            Compare the qualitative properties recorded in the starter database.
+        </p>
+
+        <div class="notice">
+            <strong>Data note:</strong>
+            The properties shown in the table below are illustrative placeholders
+            for the prototype. Confirm material grades, measured barrier values,
+            food-contact compliance, and supplier specifications before real use.
+        </div>
+
+        <!-- Existing qualitative comparison table -->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Type</th>
+                        <th>Oxygen barrier</th>
+                        <th>Moisture barrier</th>
+                        <th>Sealability</th>
+                        <th>Mechanical strength</th>
+                        <th>Breathability</th>
+                        <th>Recyclability</th>
+                        <th>Cost category</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for material in materials %}
+                    <tr>
+                        <td>{{ material["name"] }}</td>
+                        <td>{{ material["material_type"] }}</td>
+                        <td>{{ material["oxygen_barrier"] }}</td>
+                        <td>{{ material["moisture_barrier"] }}</td>
+                        <td>{{ material["sealability"] }}</td>
+                        <td>{{ material["mechanical_strength"] }}</td>
+                        <td>{{ material["breathability"] }}</td>
+                        <td>{{ material["recyclability"] }}</td>
+                        <td>{{ material["cost_category"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="source">
+            Source status: Starter database values in this table are illustrative.
+        </p>
+
+        <!-- Measured WVP summary table -->
+        <h2>Measured water-vapour permeability</h2>
+
+        <p class="subtitle">
+            Summary of reported WVP measurements at 25°C and 50% relative humidity.
+            Lower WVP indicates lower water-vapour permeability under these
+            reported test conditions.
+        </p>
+
+        <div class="data-notice">
+            <strong>How to read this data:</strong>
+            These are measurements from the supplementary dataset, grouped by
+            base material. Record counts vary, and the values do not by themselves
+            establish whether a material is suitable for a particular food.
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Number of records</th>
+                        <th>Median WVP</th>
+                        <th>Minimum WVP</th>
+                        <th>Maximum WVP</th>
+                        <th>Test conditions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in wvp_summary %}
+                    <tr>
+                        <td>{{ item["Base Material"] }}</td>
+                        <td>{{ item["record_count"] }}</td>
+                        <td>{{ "%.2e"|format(item["median_wvp"]) }}</td>
+                        <td>{{ "%.2e"|format(item["minimum_wvp"]) }}</td>
+                        <td>{{ "%.2e"|format(item["maximum_wvp"]) }}</td>
+                        <td>25°C, 50% RH</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="6">
+                            No measured WVP summary data is currently available.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="source">
+            Source: extracted supplementary material-property dataset.
+            WVP unit as recorded in the source: gm/m2Pas. The measurements are
+            material-property references, not food-specific suitability ratings.
+        </p>
+
+        <div class="actions">
+            <a class="back" href="{{ url_for('home') }}">← Back to home</a>
+        </div>
+    </main>
+</body>
+</html>

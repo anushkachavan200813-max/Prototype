@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPack AI | Packaging Recommendation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            background: #f5f8f5;
+            color: #1f2937;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .brand {
+            font-size: 21px;
+            font-weight: 700;
+            color: #16794b;
+        }
+
+        .brand span {
+            color: #1f2937;
+        }
+
+        .header-note {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        main {
+            width: min(900px, 92%);
+            margin: 45px auto;
+        }
+
+        .intro {
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: #e0f4e8;
+            color: #16794b;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        h1 {
+            margin: 18px 0 10px;
+            font-size: clamp(27px, 5vw, 40px);
+            line-height: 1.25;
+        }
+
+        .intro p {
+            max-width: 640px;
+            margin: 0 auto;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .form-card {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            background: #ffffff;
+            box-shadow: 0 12px 35px rgba(31, 41, 55, 0.06);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .field {
+            min-width: 0;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        input,
+        select {
+            width: 100%;
+            min-height: 46px;
+            padding: 11px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #1f2937;
+            font: inherit;
+            font-size: 13px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #10b981;
+            border-color: transparent;
+        }
+
+        .field-note {
+            margin: 6px 0 0;
+            color: #6b7280;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 23px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #10b981;
+            color: #ffffff;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #059669;
+        }
+
+        .disclaimer {
+            margin: 15px 0 0;
+            color: #6b7280;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 20px;
+            color: #6b7280;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 18px 5%;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .brand span {
+            color: #10b981;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #059669;
+        }
+
+        .header-note {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                order: 3;
+            }
+
+            .header-note {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            .header-note {
+                display: none;
+            }
+
+            main {
+                margin: 30px auto;
+            }
+
+            .form-card {
+                padding: 22px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">SmartPack <span>AI</span></div>
+
+        <nav class="nav-links">
+            <a href="{{ url_for('materials') }}">Compare Materials</a>
+        </nav>
+
+        <div class="header-note">AI-based packaging material screening</div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <span class="eyebrow">SMART PACKAGING ASSISTANT</span>
+            <h1>Explore packaging material options</h1>
+            <p>
+                Enter basic food and storage details to view material
+                candidates classified by the demonstration ML model.
+            </p>
+        </section>
+
+        <section class="form-card">
+            <form action="{{ url_for('recommend') }}" method="POST">
+                <div class="form-grid">
+                    <div class="field full">
+                        <label for="food_id">Food commodity</label>
+                        <select id="food_id" name="food_id" required>
+                            <option value="" disabled selected>
+                                Select a food item
+                            </option>
+
+                            {% for food in foods %}
+                            <option value="{{ food['id'] }}">
+                                {{ food['name'] }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="shelf_life_days">
+                            Desired shelf life (days)
+                        </label>
+                        <input type="number" id="shelf_life_days" name="shelf_life_days" min="1" max="3650" value="30"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="storage_type">Storage type</label>
+                        <select id="storage_type" name="storage_type" required>
+                            <option value="Ambient">Ambient</option>
+                            <option value="Refrigerated">Refrigerated</option>
+                            <option value="Frozen">Frozen</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="storage_temp_c">
+                            Storage temperature (°C)
+                        </label>
+                        <input type="number" id="storage_temp_c" name="storage_temp_c" min="-20" max="60" step="0.1"
+                            value="25" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="relative_humidity">
+                            Relative humidity (%)
+                        </label>
+                        <input type="number" id="relative_humidity" name="relative_humidity" min="0" max="100"
+                            step="0.1" value="50" required>
+                    </div>
+                </div>
+
+                <button type="submit">View Material Candidates</button>
+
+                <p class="disclaimer">
+                    Educational prototype only. Model outputs are not
+                    certified packaging, food-contact safety, or shelf-life
+                    recommendations.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        SmartPack AI · Academic project prototype
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | SmartPack AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            background: #f5f8f5;
+            color: #1f2937;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .brand {
+            font-size: 21px;
+            font-weight: 700;
+            color: #16794b;
+        }
+
+        .brand span {
+            color: #1f2937;
+        }
+
+        main {
+            width: min(950px, 92%);
+            margin: 40px auto;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(25px, 4vw, 34px);
+        }
+
+        .subtitle {
+            margin: 0 0 25px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .notice {
+            margin-bottom: 24px;
+            padding: 14px 16px;
+            border: 1px solid #f3d28b;
+            border-radius: 10px;
+            background: #fff8e8;
+            color: #795817;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .error {
+            padding: 16px;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            background: #fef2f2;
+            color: #991b1b;
+            font-size: 14px;
+        }
+
+        .results-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .material-card {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 8px 22px rgba(31, 41, 55, 0.04);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #e0f4e8;
+            color: #16794b;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status.review {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .score {
+            margin: 13px 0 0;
+            color: #4b5563;
+            font-size: 13px;
+        }
+
+        .limitations {
+            margin: 12px 0 0;
+            color: #6b7280;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .source {
+            margin-top: 8px;
+            color: #6b7280;
+            font-size: 11px;
+        }
+
+        .empty {
+            padding: 18px;
+            border: 1px dashed #cbd5e1;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 11px 17px;
+            border-radius: 9px;
+            background: #1f2937;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: #374151;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 11px 18px;
+            background: #10b981;
+            color: #ffffff;
+            border: none;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            main {
+                margin: 28px auto;
+            }
+
+            .card-top {
+                flex-direction: column;
+            }
+
+            .status {
+                white-space: normal;
+            }
+
+            .actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .back-link,
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">SmartPack <span>AI</span></div>
+    </header>
+
+    <main>
+        <h1>Material screening results</h1>
+
+        <p class="subtitle">
+            The model has classified the available materials using the
+            selected food's stored example properties.
+        </p>
+
+        <div class="notice">
+            <strong>Prototype notice:</strong>
+            These results are generated by a demo model trained on an illustrative
+            dataset. The measured WVP summary shown on the Materials page is not
+            currently used to generate these results. A “candidate for review” is
+            not a verified recommendation or proof of food-contact safety.
+            Confirm material specifications and obtain expert review before
+            practical use.
+        </div>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+
+        {% elif results %}
+        <div class="results-list">
+            {% for item in results %}
+            <article class="material-card">
+                <div class="card-top">
+                    <h2>{{ item["material_name"] }}</h2>
+
+                    {% if item["candidate_for_review"] %}
+                    <span class="status">Candidate for review</span>
+                    {% else %}
+                    <span class="status review">Not selected by demo model</span>
+                    {% endif %}
+                </div>
+
+                {% if item["model_score"] is not none %}
+                <p class="score">
+                    Illustrative model score (not a validated performance measure):
+                    {{ "%.0f"|format(item["model_score"] * 100) }}%
+                </p>
+                {% endif %}
+
+                <p class="limitations">
+                    <strong>Limitations:</strong>
+                    {{ item["limitations"] or "Not specified in the starter database." }}
+                </p>
+
+                <p class="source">
+                    Data status: {{ item["source_status"] }}
+                </p>
+            </article>
+            {% endfor %}
+        </div>
+
+        <div class="actions">
+            <a class="back-link" href="{{ url_for('home') }}">
+                ← Back to home
+            </a>
+
+            <form action="{{ url_for('download_report') }}" method="POST">
+                <input type="hidden" name="food_id" value="{{ food_id }}">
+                <input type="hidden" name="shelf_life_days" value="{{ details.shelf_life_days }}">
+                <input type="hidden" name="storage_type" value="{{ details.storage_type }}">
+                <input type="hidden" name="storage_temp_c" value="{{ details.storage_temp_c }}">
+                <input type="hidden" name="relative_humidity" value="{{ details.relative_humidity }}">
+
+                <button type="submit" class="download-btn">
+                    Download PDF Report
+                </button>
+            </form>
+        </div>
+
+        {% else %}
+        <div class="empty">
+            No material results were returned. Go back and try selecting
+            a food item again.
+        </div>
+
+        <div class="actions">
+            <a class="back-link" href="{{ url_for('home') }}">
+                ← Back to home
+            </a>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        SmartPack AI · Academic project prototype
+    </footer>
+</body>
+
+</html>
